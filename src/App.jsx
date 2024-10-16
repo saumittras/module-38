@@ -1,9 +1,28 @@
 import "./App.css";
+// import Todo from "./Todo";
+import Actor from "./Actor";
 
 function App() {
+  const actor = ["Sakib", "Shoriful Raj", "Jasim", "Ruble", "Salman Sha"];
+
+  const singers = [
+    { name: "Dr. Mafuzur Rahaman", age: 68 },
+    { name: "Eva Rahaman", age: 38 },
+    { name: "Shuvro Dev", age: 58 },
+    { name: "Pritom", age: 28 },
+  ];
+
   return (
     <>
       <h1>Vite + React</h1>
+      <Actor name={"Bappa Raz"}></Actor>
+      {actor.map((actor) => (
+        <Actor name={actor}></Actor>
+      ))}
+
+      {/* <Todo task="Learn React" isDone={true}></Todo>
+      <Todo task="Core Concept" isDone={false}></Todo>
+      <Todo task="Try JSX" isDone={true}></Todo>
       <Mori></Mori>
       <Device name="Laptop" price="55000"></Device>
       <Device name="Mobile" price="17000"></Device>
@@ -13,7 +32,7 @@ function App() {
       <Student grade={12} score="85"></Student>
       <Student></Student>
       <Developer></Developer>
-      <Developer2></Developer2>
+      <Developer2></Developer2> */}
     </>
   );
 }
