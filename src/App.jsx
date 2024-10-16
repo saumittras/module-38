@@ -5,12 +5,15 @@ function App() {
     <>
       <h1>Vite + React</h1>
       <Mori></Mori>
-      <Device name="Laptop"></Device>
-      <Device></Device>
-      <Device></Device>
+      <Device name="Laptop" price="55000"></Device>
+      <Device name="Mobile" price="17000"></Device>
+      <Device name="watch" price="3000"></Device>
       <Person></Person>
+      <Student grade="7" score="99"></Student>
+      <Student grade={12} score="85"></Student>
       <Student></Student>
       <Developer></Developer>
+      <Developer2></Developer2>
     </>
   );
 }
@@ -29,12 +32,13 @@ function Person() {
     </h3>
   );
 }
-function Student() {
+function Student({ grade = 1, score = 0 }) {
+  console.log(grade, score);
   return (
     <div className="student">
       <h3>This is a student</h3>
-      <p>Name: </p>
-      <p>Age: </p>
+      <p>Class: {grade} </p>
+      <p>Score: {score} </p>
     </div>
   );
 }
@@ -52,9 +56,28 @@ function Developer() {
     </div>
   );
 }
+function Developer2() {
+  return (
+    <div
+      style={{
+        margin: "20px",
+        padding: "20px",
+        border: "2px Solid purple",
+        borderRadius: "10px",
+      }}
+    >
+      <h5>Object Model Design Devo</h5>
+      <p>Coding:</p>
+    </div>
+  );
+}
 function Device(props) {
-  console.log(props);
-  return <h2>This Device: Laptop</h2>;
+  // console.log(props);
+  return (
+    <h2>
+      This Device: {props.name} price: {props.price}
+    </h2>
+  );
 }
 
 export default App;
